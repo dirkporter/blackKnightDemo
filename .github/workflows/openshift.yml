@@ -165,7 +165,7 @@ jobs:
     - name: create namespace
       run: |
         oc new-project blackknight-demo 
-        oc apply -f manifests/resources/test.yml    
+        oc apply -f manifests/resources/test.yml -n blackknight-demo
      
 
     # This step should create a deployment, service, and route to run your app and expose it to the internet.
