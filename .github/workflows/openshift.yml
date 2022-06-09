@@ -166,7 +166,7 @@ jobs:
       run: |
         oc new-project blackknight-demo 
     
-    -name: create networkpolicy 
+    - name: create networkpolicy 
       run: | 
         oc apply -f manifests/resources/test.yml -n blackknight-demo
      
