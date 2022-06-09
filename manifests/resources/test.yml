@@ -1,9 +1,14 @@
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-from-openshift-ingress
+  namespace: blackknight-demo
 spec:
   podSelector: {}
   ingress:
     - from:
-        - podSelector: {}
+        - namespaceSelector:
+            matchLabels:
+              network.openshift.io/policy-group: ingress
   policyTypes:
     - Ingress
